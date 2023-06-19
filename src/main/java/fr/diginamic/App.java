@@ -49,6 +49,8 @@ public class App {
             LOG.info("livre3" + livre3);
 
             em.getTransaction().commit();
+        }catch (Exception e){
+            LOG.error(e.getMessage());
         }
     }
 }
