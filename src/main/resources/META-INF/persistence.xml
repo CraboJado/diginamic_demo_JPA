@@ -10,8 +10,31 @@
       <property name="jakarta.persistence.jdbc.user" value="uhpxam8ky5kggzvi"/>
       <property name="jakarta.persistence.jdbc.password" value="RuIKr1geYfbhYTGWcn6W"/>
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
     </properties>
+  </persistence-unit>
 
+  <!--  nouvelle persistence-unit dans pour accéder -->
+  <persistence-unit name="banque_tp4" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <properties>
+      <!-- Activation de la génération des tables manquantes uniquement -->
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <!-- Drop and create à chaque redémarrage -->
+      <property name="javax.persistence.schema-generation.database.action"
+                value="drop-and-create"/>
 
+      <!-- Affichage des requêtes SQL -->
+      <property name="hibernate.show_sql" value="false"/>
+      <property name="hibernate.format_sql" value="false"/>
+
+      <!-- Paramètres d'accès à la BDD -->
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://bptxgs1iboscdhbrmqyx-mysql.services.clever-cloud.com:3306/bptxgs1iboscdhbrmqyx"/>
+      <property name="jakarta.persistence.jdbc.user" value="uibzkqwx0auejeol"/>
+      <property name="jakarta.persistence.jdbc.password" value="l9NdLXjvMWVzqqbkOVKv"/>
+      <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+    </properties>
   </persistence-unit>
 </persistence>
